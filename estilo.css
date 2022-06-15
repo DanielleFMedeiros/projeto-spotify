@@ -3,6 +3,7 @@
 
 html, body, .capa {
     height: 100%;
+    overflow: auto;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
                 linear-gradient(50deg,#ff4169, #7c26f8);
     background-attachment: fixed;
     font-family: Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* -- Barra de navegação */
@@ -41,12 +43,13 @@ nav.navbar-transparent {
     margin: 16px 10px;
 }
 
-.navbar-inverse .navbar-nav>li>a { 
+.navbar-inverse .navbar-nav>li>a, #rodape .nav a { 
     color: white;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover { 
+.navbar-inverse .navbar-nav>li>a:hover, #rodape .nav a:hover { 
     color: #9bf0e1;
+    background: none;
 }
 
 /* -- Imagem de capa -- */
@@ -68,8 +71,6 @@ nav.navbar-transparent {
     border-radius: 500px;
     -webkit-border-radius: 500px;
     -moz-border-radius: 500px;
-    padding: 10px 35px;
-    margin: 0px 15px;
     text-transform: uppercase;
     transition: background 0.4s, color 0.4s;
 }
@@ -103,16 +104,93 @@ nav.navbar-transparent {
     padding: 10px 0px 10px 0px; 
 }
 
+/* -- secao recursos -- */
+#recursos {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.rotacionar {
+    transform: rotate(30deg); 
+    -ms-transform: rotate(30deg); /* IE 9 */
+    -webkit-transform:rotate(30deg); /* Chrome, Safari, Opera*/
+    padding-left: 80px;
+}
+
+/* -- rodape -- */
+footer {
+    background: #000;
+    padding: 50px 0px 20px 0px;
+    position: relative;
+}
+
+.item-rede-social {
+    float: right;
+
+}
+/*formata links dentro das redes sociais*/
+
+/*Aplica hover específico para face e twitter*/
+footer #redes-sociais li a.face:hover { 
+    background: white;
+}
+
+footer #redes-sociais li a.twitter:hover {
+    background: purple;
+} 
+
+footer #redes-sociais li a {
+    color: none; 
+    float: right;
+}
+
+
+
 
 
 /*======== Tipografia ======== */
 
 h1 {
-    font-size: 100px;
     font-weight: 900;
     letter-spacing: -0.05em;
     margin-bottom: 50px;
 }
+
+/* Media queries  */
+/* xs < 768 */
+@media screen and (max-width: 767px){
+    h1 {
+        font-size: 50px;
+    }
+
+    .btn-custom{
+        margin: 10px 15px;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 70px;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    h1 {
+        font-size: 80px;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 100px;
+    }
+}
+
+/* Fim Media queries*/
 
 h2 {
     font-size: 50px;
@@ -126,6 +204,18 @@ h3 {
     letter-spacing: -0.04em;
 }
 
-#servicos h2,h3 {
+#rodape h4 {
+    color: #919496;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+
+#servicos h2, #servicos h3 {
     color: #7c25f8
+}
+
+#recursos h3 {
+    color: #9bf0e1;
 }
